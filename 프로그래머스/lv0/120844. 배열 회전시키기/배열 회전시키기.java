@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 class Solution {
     public int[] solution(int[] numbers, String direction) {
         int[] answer = new int[numbers.length];
