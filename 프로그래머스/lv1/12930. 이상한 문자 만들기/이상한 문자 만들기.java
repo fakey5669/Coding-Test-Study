@@ -1,22 +1,15 @@
 class Solution {
-	public String solution(String s) {
-		String answer = "";
-		int cnt = 0;
-		String[] strArr = s.split("");
- 
-		for (String s1 : strArr) {
-			if(s1.contains(" ")){
-				cnt = 0;
-			} else {
-				cnt++;
-			}
-									
-			if(cnt%2 == 0) {
-				answer += s1.toLowerCase();
-			} else {
-				answer += s1.toUpperCase();
-			}			
-		}
-		return answer;
-	}
+  public String solution(String s) {
+        char[] chars = s.toCharArray();
+        int idx = 0;
+
+        for (int i = 0; i < chars.length; i++) {
+            if (chars[i] == ' ')
+                idx = 0;
+            else
+                chars[i] = (idx++ % 2 == 0 ? Character.toUpperCase(chars[i]) : Character.toLowerCase(chars[i]));
+        }
+
+        return String.valueOf(chars);
+  }
 }
